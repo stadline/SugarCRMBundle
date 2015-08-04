@@ -1,0 +1,41 @@
+{% block sugar_account_widget %}
+    {% spaceless %}
+
+    {{ block('hidden_widget') }}
+    
+    <script type="text/javascript">
+    
+        $(function() {
+        	$("#{{ id }}").select2({
+        		placeholder: "Chercher un compte Sugar CRM",
+        		minimumInputLength: 2,
+        	    ajax: {
+        	        url: "{{ path('api_sugar_crm_accounts') }}",
+        	        dataType: 'json',
+        	        quietMillis: 100,
+        	        data: function (term, page) { // page is the one-based page number tracked by Select2
+        	        	return {
+        	                name: term, //search term
+        	            };
+        	        },
+        	        results: function (data, page) {
+        	            return {results: data};
+        	        }
+        	    },
+        	    initSelection: function(element, callback) {
+        	        var id=$(element).val();
+        	        if (id!=="") {
+        	            $.ajax("{{ path('api_sugar_crm_accounts') }}", {
+        	                data: {
+        	                    id: "{{ data }}"
+        	                },
+        	                dataType: "json"
+        	            }).done(function(data) { callback(data[0]); });
+        	        }
+        	    },
+        	});
+        });
+
+    </script>
+    {% endspaceless %}
+{% endblock %}

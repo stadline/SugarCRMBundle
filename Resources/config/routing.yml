@@ -1,0 +1,5 @@
+api_sugar_crm_accounts:
+    path:     /accounts.{_format}
+    defaults: { _controller: ApiSugarCRMBundle:Accounts:list, _format: json }
+    requirements:
+        _format: json

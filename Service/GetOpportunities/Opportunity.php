@@ -1,6 +1,6 @@
 <?php
 
-namespace Api\SugarCRMBundle\Service\GetOpportunities;
+namespace Stadline\SugarCRMBundle\Service\GetOpportunities;
 
 /**
  * Opportunity from SugarCRM

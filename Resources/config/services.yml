@@ -1,16 +1,16 @@
 parameters:
-    api_sugar_crm.client.class: Api\SugarCRMBundle\Service\Client
-    api_sugar_crm.form_type.account.class: Api\SugarCRMBundle\Form\Type\AccountType
+    stadline_sugar_crm.client.class: Stadline\SugarCRMBundle\Service\Client
+    stadline_sugar_crm.form_type.account.class: Stadline\SugarCRMBundle\Form\Type\AccountType
 
 services:
-    api_sugar_crm_client:
-        class: %api_sugar_crm.client.class%
+    stadline_sugar_crm_client:
+        class: %stadline_sugar_crm.client.class%
         arguments:
-            - %api_sugar_crm.config.base_url%
-            - %api_sugar_crm.config.username%
-            - %api_sugar_crm.config.password%
+            - %stadline_sugar_crm.config.base_url%
+            - %stadline_sugar_crm.config.username%
+            - %stadline_sugar_crm.config.password%
 
-    api_sugar_crm_form_type.tag:
-        class: %api_sugar_crm.form_type.account.class%
+    stadline_sugar_crm_form_type.tag:
+        class: %stadline_sugar_crm.form_type.account.class%
         tags:
             - { name: form.type, alias: sugar_account }

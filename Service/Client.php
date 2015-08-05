@@ -1,10 +1,10 @@
 <?php
 
-namespace Api\SugarCRMBundle\Service;
+namespace Stadline\SugarCRMBundle\Service;
 
 use Academe\SugarRestApi\Api\v4;
-use Api\SugarCRMBundle\Service\GetAccounts\Accounts;
-use Api\SugarCRMBundle\Service\GetOpportunities\Opportunities;
+use Stadline\SugarCRMBundle\Service\GetAccounts\Accounts;
+use Stadline\SugarCRMBundle\Service\GetOpportunities\Opportunities;
 
 /**
  * Sugar Rest API Client

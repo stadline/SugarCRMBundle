@@ -10,7 +10,7 @@
         		placeholder: "Chercher un compte Sugar CRM",
         		minimumInputLength: 2,
         	    ajax: {
-        	        url: "{{ path('api_sugar_crm_accounts') }}",
+        	        url: "{{ path('stadline_sugar_crm_accounts') }}",
         	        dataType: 'json',
         	        quietMillis: 100,
         	        data: function (term, page) { // page is the one-based page number tracked by Select2
@@ -25,7 +25,7 @@
         	    initSelection: function(element, callback) {
         	        var id=$(element).val();
         	        if (id!=="") {
-        	            $.ajax("{{ path('api_sugar_crm_accounts') }}", {
+        	            $.ajax("{{ path('stadline_sugar_crm_accounts') }}", {
         	                data: {
         	                    id: "{{ data }}"
         	                },

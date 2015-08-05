@@ -1,6 +1,6 @@
 <?php
 
-namespace Api\SugarCRMBundle\Form\Type;
+namespace Stadline\SugarCRMBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;

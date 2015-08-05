@@ -1,6 +1,6 @@
 <?php
 
-namespace Api\SugarCRMBundle\DependencyInjection;
+namespace Stadline\SugarCRMBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;

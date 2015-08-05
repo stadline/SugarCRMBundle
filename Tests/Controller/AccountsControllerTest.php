@@ -1,6 +1,6 @@
 <?php
 
-namespace Api\SugarCRMBundle\Tests\Controller;
+namespace Stadline\SugarCRMBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

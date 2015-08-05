@@ -3,7 +3,7 @@
     "type": "symfony-bundle",
     "description": "This Bundle include Sugar php sdk as a service",
     "keywords": ["sugar"],
-    "homepage": "",
+    "homepage": "http://www.stadline.com",
     "license": "MIT",
     "minimum-stability": "dev",
     "authors": [

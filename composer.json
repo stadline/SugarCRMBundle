@@ -1,0 +1,31 @@
+{
+    "name": "stadline/sugar-crm-bundle",
+    "type": "symfony-bundle",
+    "description": "This Bundle include Sugar php sdk as a service",
+    "keywords": ["sugar"],
+    "homepage": "",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "fabien Rondeau Stadline",
+            "homepage": "http://www.stadline.com"
+        }
+    ],
+    "require": {
+        "php"                       : ">=5.0.0",
+        "symfony/framework-bundle"  : ">=2.3",
+        "stadline/sugarrestapi" : "dev-master"
+    },
+    "repositories": [
+        {
+            "type" : "vcs",
+            "url" : "https://github.com/stadline/sugarrestapi"
+        }
+    ],
+    "autoload": {
+        "psr-0": { "Stadline\\SugarCRMBundle": "" }
+    },
+
+    "target-dir": "Stadline/SugarCRMBundle"
+}

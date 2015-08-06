@@ -37,7 +37,7 @@ PROVIDE A QUICK ACCESS TO YOUR SUGAR CRM INSTANCE
 
     parameters :
         stadline_sugar_crm.base_url: "http://your.sugar.url"
-        stadline_sugar_crm.username: login
+        stadline_sugar_crm.username: username
         stadline_sugar_crm.password: password
 
     # Sugar CRM

@@ -35,13 +35,13 @@ PROVIDE A QUICK ACCESS TO YOUR SUGAR CRM INSTANCE
 
 ### config.php
 
-parameters :
-    api_sugar_crm.base_url: "http://your.sugar.url"
-    api_sugar_crm.username: login
-    api_sugar_crm.password: password
+    parameters :
+        api_sugar_crm.base_url: "http://your.sugar.url"
+        api_sugar_crm.username: login
+        api_sugar_crm.password: password
 
-# Sugar CRM
-api_sugar_crm:
-    base_url: %api_sugar_crm.base_url%
-    username: %api_sugar_crm.username%
-    password: %api_sugar_crm.password%
+    # Sugar CRM
+    api_sugar_crm:
+        base_url: %api_sugar_crm.base_url%
+        username: %api_sugar_crm.username%
+        password: %api_sugar_crm.password%

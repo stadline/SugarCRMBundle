@@ -20,7 +20,7 @@
     "repositories": [
         {
             "type" : "vcs",
-            "url" : "https://github.com/stadline/sugarrestapi"
+            "url" : "https://github.com/stadline/sugarrestapi.git"
         }
     ],
     "autoload": {

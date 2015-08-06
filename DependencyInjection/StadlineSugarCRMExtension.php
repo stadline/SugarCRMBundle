@@ -27,7 +27,7 @@ class StadlineSugarCRMExtension extends Extension
 
         foreach (array('base_url', 'username', 'password') as $attribute) {
             if (isset($config[$attribute])) {
-                $container->setParameter('api_sugar_crm.config.' . $attribute, $config[$attribute]);
+                $container->setParameter('stadline_sugar_crm.config.' . $attribute, $config[$attribute]);
             }
         }
     }

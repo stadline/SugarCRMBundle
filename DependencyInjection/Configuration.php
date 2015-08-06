@@ -18,7 +18,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('api_sugar_crm');
+        $rootNode = $treeBuilder->root('stadline_sugar_crm');
 
         // Here you should define the parameters that are allowed to
         // configure your bundle. See the documentation linked above for

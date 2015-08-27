@@ -2,12 +2,15 @@
 
 namespace Stadline\SugarCRMBundle\Service\GetOpportunities;
 
+
+use Stadline\SugarCRMBundle\Service\GetAccounts;
 /**
  * Collection of opportunities
  * 
  * @author Jérôme Weber <jerome.weber@stadline.com>
  *
  */
+
 class Opportunities extends \ArrayObject
 {
     protected $minutes;
@@ -17,11 +20,14 @@ class Opportunities extends \ArrayObject
         // browse through list
         $collection = array();
         $this->minutes = array();
-        
+
+
+
         if ($arrayOpportunities)
         {
-            foreach ($arrayOpportunities as $arrayOpportunity) {
-                
+
+            foreach ($arrayOpportunities['relationship_list'][0]['opportunities'] as $arrayOpportunity) {
+
                 $opportunity = new Opportunity();
                 
                 $opportunity->setId($arrayOpportunity['id']);
@@ -35,6 +41,8 @@ class Opportunities extends \ArrayObject
                 $opportunity->setAmount($arrayOpportunity['amount']);
                 $opportunity->setSalesStage($arrayOpportunity['sales_stage']);
                 $opportunity->setTypeAffaireC($arrayOpportunity['type_affaire_c']);
+                $opportunity->setnumfact($arrayOpportunity['num_lmb_fact_c']);
+                $opportunity->setidLMB($arrayOpportunities['entry_list'][0]['name_value_list']['id_compte_lundi_matin_c']);
                 
                 $collection[$opportunity->getId()] = $opportunity;
                 

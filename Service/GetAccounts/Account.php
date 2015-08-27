@@ -14,6 +14,7 @@ class Account
     protected $name;
     protected $assignedAt;
     protected $email;
+    protected $id_lmb;
 
     /**
      * Get string value
@@ -40,7 +41,7 @@ class Account
     }
     
     /**
-    * Get name value
+    * Get Name value
     * 
     * @return string
     */
@@ -109,6 +110,30 @@ class Account
         $this->email = $email;
          
         return $this;
-    }    
+    }
+
+    /**
+     * Get id_lmb value
+     *
+     * @return string
+     */
+    public function getidLMB()
+    {
+        return $this->$id_lmb;
+    }
+
+    /**
+     * Set id_LMB value
+     *
+     * @param string $id_LMB
+     *
+     * @return Account
+     */
+    public function setidLMB($id_lmb)
+    {
+        $this->id_lmb = $id_lmb;
+
+        return $this;
+    }
     
 }

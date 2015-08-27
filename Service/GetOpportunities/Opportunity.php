@@ -10,6 +10,7 @@ namespace Stadline\SugarCRMBundle\Service\GetOpportunities;
  */
 class Opportunity
 {
+
     protected $id;
     protected $name;
     protected $createdAt;
@@ -21,7 +22,8 @@ class Opportunity
     protected $salesStage;
     protected $typeAffaireC;
     protected $closedAt;
-
+    protected $numfact;
+    protected $id_lmb;
     /**
      * Get Id value
      * 
@@ -29,6 +31,7 @@ class Opportunity
      */
     public function getId()
     {
+
         return $this->id;
     }
     
@@ -294,5 +297,53 @@ class Opportunity
     public function getMinutes()
     {
         return round($this->amount/500*7*60, 0);
+    }
+
+    /**
+     * Get numfact at value
+     *
+     * @return string
+     */
+    public function getnumfact()
+    {
+        return $this->numfact;
+    }
+
+    /**
+     * Set numfact at value
+     *
+     * @param string $type
+     *
+     * @return \Api\SugarCRMBundle\Service\GetOpportunities\Opportunity
+     */
+    public function setnumfact($type)
+    {
+        $this->numfact = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get idLMB value
+     *
+     * @return string
+     */
+    public function getidLMB()
+    {
+        return $this->idLMB;
+    }
+
+    /**
+     * Set idLMB value
+     *
+     * @param string $idLMB
+     *
+     * @return Api\SugarCRMBundle\Service\GetOpportunities\Opportunity
+     */
+    public function setidLMB($id_lmb)
+    {
+        $this->idLMB = $id_lmb;
+
+        return $this;
     }
 }

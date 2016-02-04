@@ -1,5 +1,4 @@
 parameters:
-    stadline_sugar_crm.client.class: Stadline\SugarCRMBundle\Service\Client
     stadline_sugar_crm.form_type.account.class: Stadline\SugarCRMBundle\Form\Type\AccountType
 
 services:

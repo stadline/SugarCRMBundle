@@ -14,14 +14,18 @@ use Stadline\SugarCRMBundle\Service\GetOpportunities\Opportunity;
 
 class SugarMock implements SugarMockInterface{
 
+    private $index =1;
+    private $opportunities = array();
+
     public function getAccounts($query)
     {
         $account = new Account();
         $account->setId("1");
-        $account->setName("Test account");
+        $account->setName("Test Lundi Matin");
         $account->setAssignedAt("Test mock");
         $account->setEmail("test@mail.com");
         $account->setidLMB("");
+
         return array($account);
     }
 
@@ -49,91 +53,31 @@ class SugarMock implements SugarMockInterface{
 
     public function getOpportunities($query)
     {
-        $opportunity = new Opportunity();
-        // Sales Stage = Closed Lost
-        if ($query == 1)
-        {
-            $opportunity->setId("1");
-            $opportunity->setName("Test Mock Opportunity");
-            $opportunity->setCreatedAt(new \DateTime());
-            $opportunity->setAssignedUserName("Test account");
-            $opportunity->setOpportunityType("Mock opportunity");
-            $opportunity->setCampaignName("Mock test");
-            $opportunity->setLeadSource("Mock Lead Source");
-            $opportunity->setAmount(10);
-            $opportunity->setSalesStage("Closed Lost");
-            $opportunity->setTypeAffaireC("Type affaire");
-            $opportunity->setidLMB("");
-            $opportunity->setnumfact("");
-        }
-        // Sales Stage = Closed Won
-        else if ($query == 2)
-        {
-            $opportunity->setId("1");
-            $opportunity->setName("Test Mock Opportunity");
-            $opportunity->setCreatedAt(new \DateTime());
-            $opportunity->setAssignedUserName("Test account");
-            $opportunity->setOpportunityType("Mock opportunity");
-            $opportunity->setCampaignName("Mock test");
-            $opportunity->setLeadSource("Mock Lead Source");
-            $opportunity->setAmount(10);
-            $opportunity->setSalesStage("Closed Won");
-            $opportunity->setTypeAffaireC("Type affaire");
-            $opportunity->setidLMB("");
-            $opportunity->setnumfact("");
-        }
-        // Num fact != null
-        else if ($query = 3)
-        {
-            $opportunity->setId("1");
-            $opportunity->setName("Test Mock Opportunity");
-            $opportunity->setCreatedAt(new \DateTime());
-            $opportunity->setAssignedUserName("Test account");
-            $opportunity->setOpportunityType("Mock opportunity");
-            $opportunity->setCampaignName("Mock test");
-            $opportunity->setLeadSource("Mock Lead Source");
-            $opportunity->setAmount(10);
-            $opportunity->setSalesStage("facture");
-            $opportunity->setTypeAffaireC("Type affaire");
-            $opportunity->setidLMB("");
-            $opportunity->setnumfact("1");
-        }
-        // Sales stages != Closed Lost/Won && numfact = ""
-        else if ($query = 4)
-        {
-            $opportunity->setId("1");
-            $opportunity->setName("Test Mock Opportunity");
-            $opportunity->setCreatedAt(new \DateTime());
-            $opportunity->setAssignedUserName("Test account");
-            $opportunity->setOpportunityType("Mock opportunity");
-            $opportunity->setCampaignName("Mock test");
-            $opportunity->setLeadSource("Mock Lead Source");
-            $opportunity->setAmount(10);
-            $opportunity->setSalesStage("facture");
-            $opportunity->setTypeAffaireC("Type affaire");
-            $opportunity->setidLMB("");
-            $opportunity->setnumfact("");
-        }
-        else {
-            $opportunity = null;
-        }
-        return array($opportunity);
+        return $this->opportunities;
     }
 
     public function setOpportunities($query)
     {
         $opportunity = new Opportunity();
-        $opportunity->setName($query["name"]);
-        $opportunity->setCreatedAt(new \DateTime());
-        $opportunity->setAssignedUserName($query["username"]);
-        $opportunity->setOpportunityType($query["opportunity_type"]);
-        $opportunity->setCampaignName($query["campaign_name"]);
-        $opportunity->setLeadSource($query["lead_source"]);
-        $opportunity->setAmount($query["amount"]);
-        $opportunity->setSalesStage($query["sales_stage"]);
-        $opportunity->setTypeAffaireC($query["affaire_type"]);
-        $opportunity->setidLMB($query["idlmb"]);
-        $opportunity->setnumfact($query["num_fact"]);
+
+        for ($i = 0; $i < count($query); $i++){
+            if($query[$i]['name'] == 'id')
+            {
+                $opportunity->setId($query[$i]['value']);
+            }
+            if($query[$i]['name'] == 'num_lmb_fact_c')
+            {
+                $opportunity->setnumfact($query[$i]['value']);
+            }
+            if($query[$i]['name'] == 'sales_stage')
+            {
+                $opportunity->setSalesStage($query[$i]['value']);
+            }
+//            if($query[$i]['name'] == 'pdf_lmb_fact_c')
+//            {
+//                $opportunity->set($query[$i]['value']);
+//            }
+        }
     }
 
     public function setAccounts($query)
@@ -156,5 +100,11 @@ class SugarMock implements SugarMockInterface{
         $contact->setWorkMobile("0606060606");
         $contact->setWorkPhone("0300000000");
         return array($contact);
+    }
+
+    public function addOpportunity(Opportunity $opportunity)
+    {
+        $this->opportunities[] = $opportunity;
+        return $this->opportunities;
     }
 }

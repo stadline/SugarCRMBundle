@@ -1,3 +1,11 @@
+# Update 07/01/2025
+
+Jessy :
+On reçoit des alertes depandabot sur ce repo
+Pour moi il n'est plus utilisé
+Je supprime les composer pour éviter les alertes
+On devrait pouvoir archiver ce repo sans problème
+
 # SugarCRMBundle
 
 PROVIDE A QUICK ACCESS TO YOUR SUGAR CRM INSTANCE
